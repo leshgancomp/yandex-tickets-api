@@ -1,0 +1,24 @@
+{
+    "name": "exploit-it/yandex-tickets-api",
+    "description": "Yandex Tickets API php wrapper",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stack 256, LLC",
+            "role": "Developer"
+        },
+        {
+            "name": "Alexey Morilov",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "YTickets\\": "src/YTickets"
+        }
+    }
+}
