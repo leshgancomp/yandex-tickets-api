@@ -40,9 +40,12 @@ class YTicketsRequest {
         } elseif ($method === self::METHOD_PATCH) {
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, self::METHOD_PATCH);
         }        
-
+        
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            "Content-Length: 0"
+        ]);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

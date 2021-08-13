@@ -51,7 +51,7 @@ $password = 'YouPassword';
 $YTicketsAPI = new YTicketsClient($username, $password);
 
 //Список городов
-$cityList = $YTicketsAPI->City->list();
+$cityList = $YTicketsAPI->City()->list();
 $cityId = $cityList[0]['id'];
-$cityList = $YTicketsAPI->Activity->list($cityId);
+$cityList = $YTicketsAPI->Activity()->list($cityId);
 ```
