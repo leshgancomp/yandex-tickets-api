@@ -19,8 +19,7 @@ class YTicketsRequest {
     
     public function execute($parameters = [], $method = 'GET') {
         $parametersURL = array_merge($parameters,[
-            'auth'=>$this->auth,
-            'uid'=>$this->getGUID()
+            'auth'=>$this->auth
         ]);
         return $this->requestCurl(self::URL, $parametersURL, $method);
     }
@@ -69,13 +68,6 @@ class YTicketsRequest {
         }
         return $json['result'];
         
-    }
-    
-    private function getGUID() {
-        if (function_exists('com_create_guid') === true) {
-            return trim(com_create_guid(), '{}');
-        }
-        return sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
     }
 
 }
